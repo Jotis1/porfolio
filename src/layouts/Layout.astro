@@ -1,0 +1,26 @@
+---
+import "../styles/global.css";
+import "@fontsource/geist-sans/latin.css";
+import "@fontsource-variable/noto-sans-jp";
+import Navbar from "../components/navbar.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body
+		class:list={[
+			"antialiased font-sans text-zinc-50 font-normal scroll-smooth",
+			"bg-zinc-950",
+		]}
+	>
+		<Navbar />
+		<slot />
+	</body>
+</html>

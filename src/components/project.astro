@@ -1,0 +1,71 @@
+---
+import Technology from "./technology.astro";
+import Button from "./button.astro";
+import TitlePattern from "./title-pattern.astro";
+import Github from "./icons/github";
+interface Props {
+    name: string;
+    technologies: (
+        | "supabase"
+        | "typescript"
+        | "bun"
+        | "astro"
+        | "tailwind"
+        | "next"
+    )[];
+    source: string;
+    reverse?: boolean;
+}
+
+const { name, technologies, source, reverse } = Astro.props;
+---
+
+<main class="h-dvh w-full flex justify-center items-center relative">
+    <TitlePattern en="Projects" jp="プロジェクト" />
+    <article
+        class:list={[
+            "max-w-3xl w-full z-10",
+            "flex items-center gap-10",
+            reverse && "flex-row-reverse",
+        ]}
+    >
+        <aside class="flex flex-col gap-5 w-80">
+            <header class="flex flex-col gap-2.5">
+                <h1 class="text-2xl font-semibold text-indigo-400">{name}</h1>
+                <section class="flex items-center gap-2.5">
+                    {
+                        technologies.map((technology) => (
+                            <Technology variant={technology} />
+                        ))
+                    }
+                </section>
+            </header>
+            <slot name="description" />
+            {
+                source && (
+                    <Button variant="primary">
+                        <a
+                            href={source}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Source code
+                        </a>
+                        <Github className="size-5 fill-zinc-900" />
+                    </Button>
+                )
+            }
+        </aside>
+        <slot name="content" />
+    </article>
+</main>
+<style>
+    main {
+        background: radial-gradient(
+                50% 50% at 50% 50%,
+                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
+                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 70%
+            ),
+            var(--color-zinc-950, #09090b);
+    }
+</style>

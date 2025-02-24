@@ -1,0 +1,141 @@
+---
+import Button from "./button.astro";
+import TypeScript from "./icons/typescript";
+import Python from "./icons/python";
+import CSharp from "./icons/csharp";
+import Github from "./icons/github";
+import { ExternalLink } from "lucide-react";
+import Php from "./icons/php";
+import type { JSX } from "astro/jsx-runtime";
+import type { SVGProps } from "react";
+
+interface ProgrammingLanguage {
+    name: string;
+    icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+}
+
+const programmingLangs: ProgrammingLanguage[] = [
+    {
+        name: "TypeScript",
+        icon: TypeScript,
+    },
+    {
+        name: "Python",
+        icon: Python,
+    },
+    {
+        name: "C#",
+        icon: CSharp,
+    },
+    {
+        name: "Php",
+        icon: Php,
+    },
+];
+---
+
+<main
+    class:list={[
+        "h-dvh w-dvw p-10",
+        "flex flex-col items-center justify-center gap-10",
+    ]}
+>
+    <header class="max-w-3xl w-full p-5 flex justify-between items-center z-10">
+        <section>
+            <div>
+                <p class="text-2xl font-medium">Hey there, this is</p>
+                <p class="font-jp text-sm font-semibold text-zinc-400">
+                    こんにちは
+                </p>
+            </div>
+            <div>
+                <h1 class="text-6xl font-black text-indigo-400">JOTIS</h1>
+                <p class="font-jp text-sm font-semibold text-zinc-400">
+                    ジョティスです
+                </p>
+            </div>
+        </section>
+        <section class="text-center">
+            <div>
+                <p class="text-2xl font-medium">Spanish</p>
+                <p class="font-jp text-sm font-semibold text-zinc-400">
+                    スペイン人
+                </p>
+            </div>
+            <div>
+                <h1 class="text-2xl font-semibold text-indigo-400">
+                    Software Developer
+                </h1>
+                <p class="font-jp text-sm font-semibold text-zinc-400">
+                    ソフトウェア開発者
+                </p>
+            </div>
+        </section>
+    </header>
+    <aside class="max-w-3xl w-full flex gap-5 z-10">
+        <section class="flex flex-col gap-5 w-full">
+            <div
+                class:list={[
+                    "flex flex-col gap-2.5 p-5",
+                    "bg-zinc-900/30 backdrop-blur-md rounded-2xl",
+                ]}
+            >
+                <p class="text-6xl font-semibold text-indigo-400">+2 years</p>
+                <p class="text-xl font-medium">of working experience</p>
+            </div>
+            <div
+                class:list={[
+                    "flex justify-between p-5",
+                    "bg-zinc-900/30 backdrop-blur-md rounded-2xl",
+                ]}
+            >
+                {
+                    programmingLangs.map((lang) => {
+                        const Icon = lang.icon;
+                        return (
+                            <p
+                                class:list={[
+                                    "flex flex-col items-center gap-2.5 max-w-20 w-full",
+                                    "text-center text-amber-200 text-xs font-medium",
+                                ]}
+                            >
+                                <Icon className="size-6" />
+                                {lang.name}
+                            </p>
+                        );
+                    })
+                }
+            </div>
+        </section>
+        <section
+            class:list={[
+                "flex flex-col gap-2.5 p-5 w-full justify-between",
+                "bg-zinc-900/30 backdrop-blur-md rounded-2xl",
+            ]}
+        >
+            <div class:list={["flex flex-col gap-2.5"]}>
+                <p class="text-6xl font-semibold text-indigo-400">+24</p>
+                <p class="text-xl font-medium">projects done</p>
+            </div>
+            <div class="flex w-full justify-between">
+                <Button variant="secondary" onlyIcon={false}>
+                    Check my latest work
+                    <ExternalLink className="size-4 text-amber-200" />
+                </Button>
+                <Button variant="primary" onlyIcon={true}>
+                    <Github className="size-6 fill-zinc-900" />
+                </Button>
+            </div>
+        </section>
+    </aside>
+</main>
+<style>
+    main {
+        background: radial-gradient(
+                100% 100% at 50% 0%,
+                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
+                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 35%
+            ),
+            var(--color-zinc-950, #09090b);
+    }
+</style>

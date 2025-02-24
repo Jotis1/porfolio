@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Geist Sans', sans-serif;
+    --font-jp: 'Noto Sans JP', sans-serif;
+}
+
+@layer components {
+    .link {
+        @apply font-semibold text-amber-200 underline
+    }
+
+    .strong {
+        @apply font-semibold text-amber-200
+    }
+}
+
+@layer base {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+}

@@ -1,0 +1,25 @@
+---
+interface Props {
+    en: string;
+    jp: string;
+}
+
+const { en, jp } = Astro.props;
+---
+
+<aside
+    class:list={[
+        "absolute bottom-1/2 right-1/2 translate-1/2",
+        "flex flex-col gap-10 justify-center items-center",
+        "uppercase text-6xl font-black text-zinc-950 italic",
+    ]}
+>
+    {
+        Array.from({ length: 3 }).map((_, i) => (
+            <Fragment>
+                <p class="font-jp">{jp}</p>
+                <p>{en}</p>
+            </Fragment>
+        ))
+    }
+</aside>

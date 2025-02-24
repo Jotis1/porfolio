@@ -1,0 +1,109 @@
+---
+import Discord from "./icons/discord";
+import Project from "./project.astro";
+---
+
+<Project
+    name="YoruBot"
+    technologies={["supabase", "typescript", "bun"]}
+    source="https://github.com/yoruverse-dev/discord-bot"
+>
+    <p slot="description">
+        Created with
+        <a
+            class="link"
+            href="https://discord.com"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Discord.js
+        </a>,
+        <a
+            class="link"
+            href="https://discord.com"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OpenAI
+        </a> and
+        <a
+            class="link"
+            href="https://discord.com"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Langchain
+        </a> . YoruBot was made for entertaining. Open-source and MIT license.
+    </p>
+    <section
+        slot="content"
+        class="flex justify-between max-w-[408px] w-full h-[300px]"
+    >
+        <aside
+            class="max-w-3xs shrink-0 h-fit w-full rounded-2xl bg-zinc-900 overflow-hidden"
+        >
+            <figure class="h-20 bg-amber-400 relative">
+                <div
+                    class:list={[
+                        "absolute left-2.5 top-full -translate-y-1/2 p-[5px]",
+                        "size-[70px] rounded-full bg-zinc-900",
+                    ]}
+                >
+                    <div
+                        class="size-full rounded-full bg-amber-400 grid place-content-center"
+                    >
+                        <Discord className="size-9 *:fill-white" />
+                    </div>
+                    <div
+                        class:list={[
+                            "size-[18px] bg-slate-900 rounded-full p-1",
+                            "absolute bottom-1 right-1",
+                        ]}
+                    >
+                        <div class="size-full bg-emerald-200 rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <section class="px-5 pt-9 pb-4 flex flex-col">
+                <p class="font-semibold">YoruBot</p>
+                <small class="font-medium text-[10px] text-zinc-400"
+                    >YoruBot#7738</small
+                >
+            </section>
+        </aside>
+        <aside
+            class="max-w-3xs shrink-0 h-fit w-full rounded-2xl bg-zinc-900 overflow-hidden"
+        >
+            <figure class="h-20 bg-amber-400 relative">
+                <div
+                    class:list={[
+                        "absolute left-2.5 top-full -translate-y-1/2 p-[5px]",
+                        "size-[70px] rounded-full bg-zinc-900",
+                    ]}
+                >
+                    <div
+                        class="size-full rounded-full bg-amber-400 grid place-content-center"
+                    >
+                        <Discord className="size-9 *:fill-white" />
+                    </div>
+                    <div
+                        class:list={[
+                            "size-[18px] bg-slate-900 rounded-full p-1",
+                            "absolute bottom-1 right-1",
+                        ]}
+                    >
+                        <div class="size-full bg-emerald-200 rounded-full">
+                        </div>
+                    </div>
+                </div>
+            </figure>
+            <section class="px-5 pt-9 pb-4 flex flex-col">
+                <p class="font-semibold">YoruBot</p>
+                <small class="font-medium text-[10px] text-zinc-400"
+                    >YoruBot#7738</small
+                >
+            </section>
+        </aside>
+    </section>
+</Project>

@@ -1,0 +1,40 @@
+---
+import { ExternalLink } from "lucide-react";
+const mail = "cuellarjotis@gmail.com";
+
+interface NavLink {
+    href: string;
+    text: string;
+    external?: boolean;
+}
+
+const links: NavLink[] = [
+    { href: "/#experience", text: "Experience" },
+    { href: "/#projects", text: "Projects" },
+    { href: "/#about", text: "About" },
+    { href: `mailto:${mail}`, text: "Contact me", external: true },
+];
+---
+
+<nav
+    class:list={[
+        "fixed top-10 right-1/2 translate-x-1/2 z-20",
+        "bg-zinc-950/50 p-5 rounded-2xl backdrop-blur-md",
+        "flex items-center gap-2.5",
+        "font-medium text-sm",
+    ]}
+>
+    {
+        links.map((link) => (
+            <a
+                class="text-center min-w-28 flex justify-center items-center gap-1.5"
+                href={link.href}
+            >
+                {link.text}
+                {link.external && (
+                    <ExternalLink className="size-4 text-amber-200" />
+                )}
+            </a>
+        ))
+    }
+</nav>

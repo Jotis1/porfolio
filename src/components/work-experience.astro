@@ -1,0 +1,104 @@
+---
+import TitlePattern from "./title-pattern.astro";
+
+interface Work {
+    position: string;
+    company: string;
+    date: string;
+}
+
+const works: Work[] = [
+    {
+        position: "Software Developer",
+        company: "Becall Group",
+        date: "2023 - Present",
+    },
+    {
+        position: "Full-stack Developer",
+        company: "Tourcitygames",
+        date: "2023 - 2024",
+    },
+];
+---
+
+<main
+    id="experience"
+    class:list={[
+        "h-dvh w-dvw p-10",
+        "flex flex-col items-center justify-center gap-10 relative",
+    ]}
+>
+    <TitlePattern en="Experience" jp="経験" />
+    <article
+        class:list={[
+            "max-w-3xl w-full p-2.5",
+            "z-10 flex items-center justify-center gap-5",
+        ]}
+    >
+        <header class="flex flex-col gap-5 w-[250px] shrink-0">
+            <div>
+                <h2 class="text-2xl font-semibold text-indigo-400">
+                    {works[0].position}
+                </h2>
+                <h3 class="font-medium">{works[0].company}</h3>
+            </div>
+            <small class="text-xs font-medium text-zinc-400">
+                {works[0].date}
+            </small>
+        </header>
+        <p class="max-w-96 w-full text-balance">
+            Developing <strong class="strong">multiplatform applications</strong
+            >. Company's mobile
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://play.google.com/store/apps/details?id=com.becall.app&pli=1"
+                class="link"
+            >
+                timekeeping application
+            </a>
+            manager and dev. Implementing best practices and test-based development.
+        </p>
+    </article>
+    <article
+        class:list={[
+            "max-w-3xl w-full p-2.5",
+            "z-10 flex items-center justify-center gap-5",
+        ]}
+    >
+        <header class="flex flex-col gap-5 w-[250px] shrink-0">
+            <div>
+                <h2 class="text-2xl font-semibold text-indigo-400">
+                    {works[1].position}
+                </h2>
+                <h3 class="font-medium">{works[1].company}</h3>
+            </div>
+            <small class="text-xs font-medium text-zinc-400">
+                {works[1].date}
+            </small>
+        </header>
+        <p class="max-w-96 w-full text-balance">
+            <strong class="strong">Design, development and deployment</strong> of
+            an online gymkhana store, using Strapi, Next.js and secure payments with
+            Redsys.
+            <a
+                href="https://tourcitygames.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link"
+            >
+                Take a look!
+            </a>
+        </p>
+    </article>
+</main>
+<style>
+    main {
+        background: radial-gradient(
+                50% 50% at 50% 50%,
+                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
+                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 70%
+            ),
+            var(--color-zinc-950, #09090b);
+    }
+</style>

@@ -1,0 +1,49 @@
+---
+import Supabase from "./icons/supabase";
+import TypeScript from "./icons/typescript";
+import Bun from "./icons/bun";
+import AstroIcon from "./icons/astro";
+import Tailwind from "./icons/tailwind";
+import Next from "./icons/next";
+
+interface Props {
+    variant: "supabase" | "typescript" | "bun" | "astro" | "tailwind" | "next";
+}
+
+const { variant } = Astro.props;
+
+const color = {
+    supabase: "text-emerald-300",
+    typescript: "text-indigo-400",
+    bun: "text-rose-200",
+    astro: "text-zinc-50",
+    tailwind: "text-sky-300",
+    next: "text-zinc-50",
+};
+
+const icon = {
+    supabase: Supabase,
+    typescript: TypeScript,
+    bun: Bun,
+    astro: AstroIcon,
+    tailwind: Tailwind,
+    next: Next,
+};
+---
+
+<span
+    class:list={[
+        "text-[10px] font-medium",
+        "flex items-center gap-2.5",
+        "px-2.5 py-1 rounded-lg bg-zinc-900",
+        color[variant],
+    ]}
+>
+    {
+        () => {
+            const Icon = icon[variant];
+            return <Icon className="size-3.5" />;
+        }
+    }
+    {variant}
+</span>
