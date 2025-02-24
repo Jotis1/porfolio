@@ -1,0 +1,52 @@
+---
+import TitlePattern from "./title-pattern.astro";
+---
+
+<main
+    class:list={[
+        "h-dvh w-dvw p-10",
+        "flex items-center justify-center relative",
+    ]}
+>
+    <TitlePattern en="About me" jp="私について" />
+    <section class="flex items-center justify-center gap-10 max-w-3xl z-10">
+        <article class="max-w-full w-full flex flex-col gap-4">
+            <p>
+                My name is <strong class="strong">Juan Manuel</strong> but I like
+                to be called Jotis. I started programming when I was very young,
+                making discord bots for "osu!" servers.
+            </p>
+            <p>
+                I always liked creating things and I used <strong class="strong"
+                    >code as a tool for it.</strong
+                >
+                I am <strong class="strong">not a conformist person,</strong> if
+                something can be done better I will look for a way to make it possible.
+            </p>
+            <p>
+                I like to help my colleagues and <strong class="strong"
+                    >share my knowledge,</strong
+                > I believe in teamwork and camaraderie.
+            </p>
+        </article>
+        <figure
+            class="bg-zinc-900/30 rounded-2xl backdrop-blur-md p-4 size-64 shrink-0"
+        >
+            <img
+                src="https://github.com/jotis1.png"
+                alt="Jotis's Github Image"
+                class="rounded-2xl"
+            />
+        </figure>
+    </section>
+</main>
+<style>
+    main {
+        background: radial-gradient(
+                50% 50% at 50% 50%,
+                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
+                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 50%
+            ),
+            var(--color-zinc-950, #09090b);
+    }
+</style>
