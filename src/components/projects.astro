@@ -12,7 +12,7 @@ import Project from "./project.astro";
         Created with
         <a
             class="link"
-            href="https://discord.com"
+            href="https://discordjs.guide"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -20,7 +20,7 @@ import Project from "./project.astro";
         </a>,
         <a
             class="link"
-            href="https://discord.com"
+            href="https://platform.openai.com"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -28,19 +28,36 @@ import Project from "./project.astro";
         </a> and
         <a
             class="link"
-            href="https://discord.com"
+            href="https://www.langchain.com/"
             target="_blank"
             rel="noopener noreferrer"
         >
             Langchain
         </a> . YoruBot was made for entertaining. Open-source and MIT license.
     </p>
-    <section
-        slot="content"
-        class="flex justify-between max-w-[408px] w-full h-[300px]"
-    >
+    <section slot="content" class="relative flex justify-end w-full h-[300px]">
+        <aside class="max-w-3xs size-full absolute top-0 left-0 pt-14">
+            <section
+                class:list={[
+                    "bg-zinc-900/30 size-full rounded-2xl backdrop-blur-md p-2.5",
+                    "flex flex-col justify-end gap-2.5",
+                ]}
+            >
+                <p
+                    class="text-sm px-3.5 py-2 bg-zinc-900 rounded-2xl rounded-tr-xs"
+                >
+                    Hi there, I'm <strong class="strong">YoruBot</strong>! What
+                    can I do for you?
+                </p>
+                <input
+                    type="text"
+                    class="focus:ring-0 h-10 outline-none text-sm px-3.5 bg-zinc-900 rounded-2xl placeholder:text-zinc-400"
+                    placeholder="Talk with the bot..."
+                />
+            </section>
+        </aside>
         <aside
-            class="max-w-3xs shrink-0 h-fit w-full rounded-2xl bg-zinc-900 overflow-hidden"
+            class="max-w-3xs h-fit w-full rounded-2xl bg-zinc-900 overflow-hidden z-[1]"
         >
             <figure class="h-20 bg-amber-400 relative">
                 <div
@@ -72,38 +89,49 @@ import Project from "./project.astro";
                 >
             </section>
         </aside>
-        <aside
-            class="max-w-3xs shrink-0 h-fit w-full rounded-2xl bg-zinc-900 overflow-hidden"
+    </section>
+</Project>
+<Project
+    name="YoruGacha"
+    technologies={["tailwind", "next", "bun"]}
+    source="https://github.com/yoruverse-dev/gacha"
+    reverse
+    live="https://gacha.yoruverse.com"
+>
+    <p slot="description">
+        An <strong class="strong">anime characters gachapon.</strong> Made for playing
+        on the web. No trackers, no ads, just fun. Developed with
+        <a
+            class="link"
+            href="https://nextjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Next.js
+        </a> and deployed in my own server.
+    </p>
+    <section slot="content" class="relative flex justify-end w-full h-[300px]">
+        <figure
+            class="bg-zinc-900/30 size-full rounded-2xl backdrop-blur-md p-2.5"
         >
-            <figure class="h-20 bg-amber-400 relative">
-                <div
-                    class:list={[
-                        "absolute left-2.5 top-full -translate-y-1/2 p-[5px]",
-                        "size-[70px] rounded-full bg-zinc-900",
-                    ]}
-                >
-                    <div
-                        class="size-full rounded-full bg-amber-400 grid place-content-center"
-                    >
-                        <Discord className="size-9 *:fill-white" />
-                    </div>
-                    <div
-                        class:list={[
-                            "size-[18px] bg-slate-900 rounded-full p-1",
-                            "absolute bottom-1 right-1",
-                        ]}
-                    >
-                        <div class="size-full bg-emerald-200 rounded-full">
-                        </div>
-                    </div>
-                </div>
-            </figure>
-            <section class="px-5 pt-9 pb-4 flex flex-col">
-                <p class="font-semibold">YoruBot</p>
-                <small class="font-medium text-[10px] text-zinc-400"
-                    >YoruBot#7738</small
-                >
-            </section>
-        </aside>
+        </figure>
+    </section>
+</Project>
+<Project
+    name="JotisLink"
+    technologies={["tailwind", "astro", "bun"]}
+    source="https://github.com/jotis1/url-shortener"
+    live="https://link.jotis.me"
+>
+    <p slot="description">
+        My own <strong class="strong">link shortener</strong>, free forever
+        version without tracking and <strong class="strong"
+            >fully customizable.</strong
+        > There is also a paid version where links last forever.
+    </p>
+    <section slot="content" class="relative flex justify-end w-full h-[300px]">
+        <figure
+            class="bg-zinc-900/30 size-full rounded-2xl backdrop-blur-md p-2.5"
+        >
+        </figure>
     </section>
 </Project>

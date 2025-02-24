@@ -3,6 +3,7 @@ import Technology from "./technology.astro";
 import Button from "./button.astro";
 import TitlePattern from "./title-pattern.astro";
 import Github from "./icons/github";
+import { ExternalLink } from "lucide-react";
 interface Props {
     name: string;
     technologies: (
@@ -14,13 +15,14 @@ interface Props {
         | "next"
     )[];
     source: string;
+    live?: string;
     reverse?: boolean;
 }
 
-const { name, technologies, source, reverse } = Astro.props;
+const { name, technologies, source, reverse, live } = Astro.props;
 ---
 
-<main class="h-dvh w-full flex justify-center items-center relative">
+<main class:list={["h-dvh w-full flex justify-center items-center relative"]}>
     <TitlePattern en="Projects" jp="プロジェクト" />
     <article
         class:list={[
@@ -29,7 +31,7 @@ const { name, technologies, source, reverse } = Astro.props;
             reverse && "flex-row-reverse",
         ]}
     >
-        <aside class="flex flex-col gap-5 w-80">
+        <aside class="flex flex-col gap-5 max-w-80 w-full">
             <header class="flex flex-col gap-2.5">
                 <h1 class="text-2xl font-semibold text-indigo-400">{name}</h1>
                 <section class="flex items-center gap-2.5">
@@ -41,20 +43,36 @@ const { name, technologies, source, reverse } = Astro.props;
                 </section>
             </header>
             <slot name="description" />
-            {
-                source && (
-                    <Button variant="primary">
+            <footer class="flex w-full justify-between">
+                {
+                    source && (
+                        <Button variant="primary">
+                            <a
+                                href={source}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source code
+                            </a>
+                            <Github className="size-5 fill-zinc-900" />
+                        </Button>
+                    )
+                }
+                {
+                    live && (
                         <a
-                            href={source}
+                            href={live}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Source code
+                            <Button variant="secondary">
+                                Live preview{" "}
+                                <ExternalLink className="size-4 text-amber-200" />
+                            </Button>
                         </a>
-                        <Github className="size-5 fill-zinc-900" />
-                    </Button>
-                )
-            }
+                    )
+                }
+            </footer>
         </aside>
         <slot name="content" />
     </article>
@@ -64,7 +82,7 @@ const { name, technologies, source, reverse } = Astro.props;
         background: radial-gradient(
                 50% 50% at 50% 50%,
                 var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
-                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 70%
+                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 50%
             ),
             var(--color-zinc-950, #09090b);
     }

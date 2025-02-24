@@ -29,11 +29,20 @@ const icon = {
     tailwind: Tailwind,
     next: Next,
 };
+
+const text = {
+    supabase: "Supabase",
+    typescript: "TypeScript",
+    bun: "Bun",
+    astro: "Astro",
+    tailwind: "TailwindCSS",
+    next: "Next.js",
+};
 ---
 
 <span
     class:list={[
-        "text-[10px] font-medium",
+        "text-sm",
         "flex items-center gap-2.5",
         "px-2.5 py-1 rounded-lg bg-zinc-900",
         color[variant],
@@ -45,5 +54,5 @@ const icon = {
             return <Icon className="size-3.5" />;
         }
     }
-    {variant}
+    {text[variant]}
 </span>
