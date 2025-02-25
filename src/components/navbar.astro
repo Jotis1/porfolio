@@ -19,15 +19,15 @@ const links: NavLink[] = [
 <nav
     class:list={[
         "fixed top-10 right-1/2 translate-x-1/2 z-20",
-        "bg-zinc-950/50 p-5 rounded-2xl backdrop-blur-md",
+        "bg-zinc-900/30 p-5 rounded-2xl backdrop-blur-md",
         "flex items-center gap-2.5",
-        "font-medium text-sm",
+        "font-medium sm:text-sm text-xs",
     ]}
 >
     {
         links.map((link) => (
             <a
-                class="text-center min-w-28 flex justify-center items-center gap-1.5"
+                class="text-center sm:min-w-28 text-nowrap flex justify-center items-center gap-1.5"
                 href={link.href}
             >
                 {link.text}

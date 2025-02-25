@@ -24,7 +24,7 @@ const works: Work[] = [
 <main
     id="experience"
     class:list={[
-        "h-dvh w-dvw p-10",
+        "min-h-dvh h-fit w-dvw p-10",
         "flex flex-col items-center justify-center gap-10 relative",
     ]}
 >
@@ -32,10 +32,10 @@ const works: Work[] = [
     <article
         class:list={[
             "max-w-3xl w-full p-2.5",
-            "z-10 flex items-center justify-center gap-5",
+            "z-10 flex sm:flex-row flex-col items-center justify-center gap-5 sm:text-start text-center",
         ]}
     >
-        <header class="flex flex-col gap-5 w-[250px] shrink-0">
+        <header class="flex flex-col gap-5 max-w-[250px] w-full shrink-0">
             <div>
                 <h2 class="text-2xl font-semibold text-indigo-400">
                     {works[0].position}
@@ -63,7 +63,7 @@ const works: Work[] = [
     <article
         class:list={[
             "max-w-3xl w-full p-2.5",
-            "z-10 flex items-center justify-center gap-5",
+            "z-10 flex sm:flex-row flex-col items-center justify-center gap-5  sm:text-start text-center",
         ]}
     >
         <header class="flex flex-col gap-5 w-[250px] shrink-0">

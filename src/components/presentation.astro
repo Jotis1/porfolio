@@ -36,52 +36,70 @@ const programmingLangs: ProgrammingLanguage[] = [
 
 <main
     class:list={[
-        "h-dvh w-dvw p-10",
+        "min-h-dvh w-dvw p-10",
         "flex flex-col items-center justify-center gap-10",
     ]}
 >
-    <header class="max-w-3xl w-full p-5 flex justify-between items-center z-10">
-        <section>
+    <header
+        class="max-w-3xl w-full p-5 sm:flex-row flex-col flex sm:gap-0 gap-5 md:mt-0 mt-20 justify-between items-center z-10"
+    >
+        <section class="sm:text-start text-center">
             <div>
-                <p class="text-2xl font-medium">Hey there, this is</p>
-                <p class="font-jp text-sm font-semibold text-zinc-400">
+                <p class="sm:text-2xl text-xl font-medium">
+                    Hey there, this is
+                </p>
+                <p
+                    class="font-jp sm:text-sm text-xs font-semibold text-zinc-400"
+                >
                     こんにちは
                 </p>
             </div>
             <div>
-                <h1 class="text-6xl font-black text-indigo-400">JOTIS</h1>
-                <p class="font-jp text-sm font-semibold text-zinc-400">
+                <h1 class="sm:text-6xl text-5xl font-black text-indigo-400">
+                    JOTIS
+                </h1>
+                <p
+                    class="font-jp sm:text-sm text-xs font-semibold text-zinc-400"
+                >
                     ジョティスです
                 </p>
             </div>
         </section>
         <section class="text-center">
             <div>
-                <p class="text-2xl font-medium">Spanish</p>
-                <p class="font-jp text-sm font-semibold text-zinc-400">
+                <p class="sm:text-2xl text-xl font-medium">Spanish</p>
+                <p
+                    class="font-jp sm:text-sm text-xs font-semibold text-zinc-400"
+                >
                     スペイン人
                 </p>
             </div>
             <div>
-                <h1 class="text-2xl font-semibold text-indigo-400">
+                <h1 class="sm:text-2xl text-xl font-semibold text-indigo-400">
                     Software Developer
                 </h1>
-                <p class="font-jp text-sm font-semibold text-zinc-400">
+                <p
+                    class="font-jp sm:text-sm text-xs font-semibold text-zinc-400"
+                >
                     ソフトウェア開発者
                 </p>
             </div>
         </section>
     </header>
-    <aside class="max-w-3xl w-full flex gap-5 z-10">
+    <aside class="max-w-3xl w-full flex md:flex-row flex-col gap-5 z-10">
         <section class="flex flex-col gap-5 w-full">
             <div
                 class:list={[
-                    "flex flex-col gap-2.5 p-5",
+                    "flex flex-col gap-2.5 p-5 sm:text-start text-center",
                     "bg-zinc-900/30 backdrop-blur-md rounded-2xl",
                 ]}
             >
-                <p class="text-6xl font-semibold text-indigo-400">+2 years</p>
-                <p class="text-xl font-medium">of working experience</p>
+                <p class="sm:text-6xl text-5xl font-semibold text-indigo-400">
+                    +2 years
+                </p>
+                <p class="sm:text-xl text-lg font-medium">
+                    of working experience
+                </p>
             </div>
             <div
                 class:list={[
@@ -109,15 +127,19 @@ const programmingLangs: ProgrammingLanguage[] = [
         </section>
         <section
             class:list={[
-                "flex flex-col gap-2.5 p-5 w-full justify-between",
-                "bg-zinc-900/30 backdrop-blur-md rounded-2xl",
+                "flex flex-col md:gap-10 gap-5 p-5 w-full justify-between",
+                "bg-zinc-900/30 backdrop-blur-md rounded-2xl md:text-start text-center",
             ]}
         >
             <div class:list={["flex flex-col gap-2.5"]}>
-                <p class="text-6xl font-semibold text-indigo-400">+24</p>
-                <p class="text-xl font-medium">projects done</p>
+                <p class="sm:text-6xl text-5xl font-semibold text-indigo-400">
+                    +24
+                </p>
+                <p class="sm:text-xl text-lg font-medium">projects done</p>
             </div>
-            <div class="flex w-full justify-between">
+            <div
+                class="flex md:flex-row flex-col gap-5 items-center w-full justify-between"
+            >
                 <Button variant="secondary" onlyIcon={false}>
                     Check my latest work
                     <ExternalLink className="size-4 text-amber-200" />

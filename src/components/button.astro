@@ -13,7 +13,7 @@ const { variant, onlyIcon = false } = Astro.props;
         "px-5 h-10 w-fit",
         variant === "primary" && "bg-indigo-400 text-zinc-900",
         variant === "secondary" && "bg-zinc-800",
-        onlyIcon && "size-10 *:shrink-0",
+        onlyIcon && "size-10 *:shrink-0 grow-0 aspect-square",
     ]}
 >
     <slot />

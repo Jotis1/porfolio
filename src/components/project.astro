@@ -22,13 +22,15 @@ interface Props {
 const { name, technologies, source, reverse, live } = Astro.props;
 ---
 
-<main class:list={["h-dvh w-full flex justify-center items-center relative"]}>
+<main
+    class:list={["h-dvh w-full flex justify-center items-center relative p-10"]}
+>
     <TitlePattern en="Projects" jp="プロジェクト" />
     <article
         class:list={[
             "max-w-3xl w-full z-10",
-            "flex items-center gap-10",
-            reverse && "flex-row-reverse",
+            "flex sm:flex-row flex-col items-center gap-10",
+            reverse && "sm:flex-row-reverse flex-col",
         ]}
     >
         <aside class="flex flex-col gap-5 max-w-80 w-full">
