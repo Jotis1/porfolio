@@ -32,13 +32,15 @@ const programmingLangs: ProgrammingLanguage[] = [
 const workStartingYear = 2023;
 const currentYear = new Date().getFullYear();
 const diffYears = currentYear - workStartingYear;
+
+const github = import.meta.env.PUBLIC_GITHUB;
 ---
 
 <main
     class:list={[
-        "min-h-dvh sm:p-10 p-5",
+        "min-h-screen sm:p-10 p-5",
         "flex flex-col items-center justify-center gap-10",
-        "sm:bg-radial-[100%_100%_at_50%_0%] from-zinc-700 to-zinc-950 to-40%",
+        "sm:bg-radial-[100%_100%_at_50%_0%] from-indigo-950 to-zinc-950 to-50%",
         "bg-radial-[100%_50%_at_50%_0%]",
     ]}
 >
@@ -149,7 +151,7 @@ const diffYears = currentYear - workStartingYear;
                     </Button>
                 </a>
                 <a
-                    href="https://github.com/jotis1"
+                    href={`https://github.com/${github}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >

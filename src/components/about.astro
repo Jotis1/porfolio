@@ -1,13 +1,20 @@
 ---
+import { Mail } from "lucide-react";
+import { Github, LinkedIn } from "./react/icons";
 import TitlePattern from "./title-pattern.astro";
+const {
+    PUBLIC_EMAIL: mail,
+    PUBLIC_GITHUB: github,
+    PUBLIC_LINKEDIN: linkedin,
+} = import.meta.env;
 ---
 
 <main
     id="about"
     class:list={[
-        "h-dvh sm:p-10 p-5",
+        "min-h-screen sm:p-10 p-5",
         "flex items-center justify-center relative",
-        "sm:bg-radial-[50%_50%_at_50%_50%] from-zinc-800 to-zinc-950 to-50%",
+        "sm:bg-radial-[50%_50%_at_50%_50%] from-indigo-950 to-zinc-950 to-50%",
         "bg-radial-[100%_50%_at_50%_50%]",
     ]}
 >
@@ -37,13 +44,47 @@ import TitlePattern from "./title-pattern.astro";
             </p>
         </article>
         <figure
-            class="bg-zinc-800/30 rounded-2xl backdrop-blur-md p-4 size-64 shrink-0"
+            class="bg-zinc-800/30 rounded-[18px] backdrop-blur-md p-1 size-64 shrink-0"
         >
             <img
-                src="https://github.com/jotis1.png"
+                src={`https://github.com/${github}.png`}
                 alt="Jotis's Github Image"
                 class="rounded-2xl"
             />
         </figure>
     </section>
+    <footer
+        class="absolute bottom-0 flex flex-col sm:gap-12 gap-5 px-5 py-10 items-center justify-center text-sm"
+    >
+        <p>Crafted by be with Astro</p>
+        <section class="flex gap-12 items-centerfont-medium text-zinc-400">
+            <a
+                class="flex items-center gap-1.5"
+                href={`https://linkedin.com/in/${linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <LinkedIn className="size-4" />
+                Linkedin
+            </a>
+            <a
+                class="flex items-center gap-1.5"
+                href={`https://github.com/${github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <Github className="size-4" />
+                Github
+            </a>
+            <a
+                class="flex items-center gap-1.5"
+                href={`mailto:${mail}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <Mail className="size-4" />
+                Email
+            </a>
+        </section>
+    </footer>
 </main>

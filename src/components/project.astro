@@ -22,6 +22,8 @@ interface Props {
 }
 
 const { name, technologies, source, reverse, live, image } = Astro.props;
+
+import backgroundImage from "../assets/background.png";
 ---
 
 <article
@@ -51,16 +53,16 @@ const { name, technologies, source, reverse, live, image } = Astro.props;
             <footer class="flex w-full justify-between">
                 {
                     source && (
-                        <Button variant="primary">
-                            <a
-                                href={source}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                        <a
+                            href={source}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Button variant="primary">
                                 Source code
-                            </a>
-                            <Github className="size-5 fill-zinc-900" />
-                        </Button>
+                                <Github className="size-5 fill-zinc-900" />
+                            </Button>
+                        </a>
                     )
                 }
                 {
@@ -71,7 +73,7 @@ const { name, technologies, source, reverse, live, image } = Astro.props;
                             rel="noopener noreferrer"
                         >
                             <Button variant="secondary">
-                                Live preview{" "}
+                                Live preview
                                 <ExternalLink className="size-4 text-amber-200" />
                             </Button>
                         </a>
@@ -81,15 +83,28 @@ const { name, technologies, source, reverse, live, image } = Astro.props;
         </aside>
         <figure
             class:list={[
-                "bg-zinc-800/30 size-full rounded-[18px] overflow-hidden backdrop-blur-md p-1",
-                "hover:scale-103 transition-all duration-500",
+                "relative bg-zinc-800/30 size-full rounded-[18px] overflow-hidden backdrop-blur-md",
+                "group border-4 border-zinc-800/30",
             ]}
         >
             <Image
                 src={image}
                 alt={name}
-                class="rounded-2xl size-full object-cover"
+                class:list={[
+                    "group-hover:scale-105 group-hover:-translate-y-1.5 transition-transform duration-300",
+                    "rounded-2xl size-full object-cover z-10 relative",
+                ]}
             />
+            <span class="size-full absolute inset-0">
+                <Image
+                    src={backgroundImage}
+                    alt="Background"
+                    class:list={[
+                        "rounded-2xl object-cover",
+                        " scale-110 group-hover:scale-100 transition-transform duration-300",
+                    ]}
+                />
+            </span>
         </figure>
     </section>
 </article>

@@ -9,10 +9,11 @@ const { variant, onlyIcon = false } = Astro.props;
 
 <button
     class:list={[
-        "flex items-center justify-center gap-2.5 rounded-2xl text-sm font-medium cursor-pointer",
-        "px-5 h-10 w-fit",
-        variant === "primary" && "bg-indigo-400 text-zinc-900",
-        variant === "secondary" && "bg-zinc-800",
+        "flex items-center justify-center gap-2.5 rounded-2xl text-sm font-medium cursor-pointer transition-all",
+        "px-5 h-10 w-fit hover:-translate-y-0.5",
+        variant === "primary" &&
+            "bg-indigo-400 hover:bg-indigo-500 text-zinc-900",
+        variant === "secondary" && "bg-zinc-800 hover:bg-zinc-900",
         onlyIcon && "size-10 *:shrink-0 grow-0 aspect-square",
     ]}
 >

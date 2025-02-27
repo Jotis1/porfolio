@@ -1,6 +1,6 @@
 ---
 import { ExternalLink } from "lucide-react";
-const mail = "cuellarjotis@gmail.com";
+const mail = import.meta.env.PUBLIC_EMAIL;
 
 interface NavLink {
     href: string;
@@ -18,7 +18,7 @@ const links: NavLink[] = [
 
 <nav
     class:list={[
-        "fixed sm:top-10 top-5 right-1/2 translate-x-1/2 z-20 max-w-full mx-auto",
+        "fixed top-5 right-1/2 translate-x-1/2 z-20 max-w-full mx-auto",
         "bg-zinc-800/30 px-5 py-3.5 rounded-2xl backdrop-blur-md",
         "flex items-center gap-5",
         "font-medium sm:text-sm text-xs",
