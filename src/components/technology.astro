@@ -1,10 +1,12 @@
 ---
-import Supabase from "./icons/supabase";
-import TypeScript from "./icons/typescript";
-import Bun from "./icons/bun";
-import AstroIcon from "./icons/astro";
-import Tailwind from "./icons/tailwind";
-import Next from "./icons/next";
+import {
+    Supabase,
+    TypeScript,
+    Bun,
+    Astro as AstroIcon,
+    TailwindCSS,
+    Nextjs,
+} from "./react/icons";
 
 interface Props {
     variant: "supabase" | "typescript" | "bun" | "astro" | "tailwind" | "next";
@@ -26,8 +28,8 @@ const icon = {
     typescript: TypeScript,
     bun: Bun,
     astro: AstroIcon,
-    tailwind: Tailwind,
-    next: Next,
+    tailwind: TailwindCSS,
+    next: Nextjs,
 };
 
 const text = {

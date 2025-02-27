@@ -18,16 +18,16 @@ const links: NavLink[] = [
 
 <nav
     class:list={[
-        "fixed top-10 right-1/2 translate-x-1/2 z-20",
-        "bg-zinc-900/30 p-5 rounded-2xl backdrop-blur-md",
-        "flex items-center gap-2.5",
+        "fixed sm:top-10 top-5 right-1/2 translate-x-1/2 z-20 max-w-full mx-auto",
+        "bg-zinc-800/30 px-5 py-3.5 rounded-2xl backdrop-blur-md",
+        "flex items-center gap-5",
         "font-medium sm:text-sm text-xs",
     ]}
 >
     {
         links.map((link) => (
             <a
-                class="text-center sm:min-w-28 text-nowrap flex justify-center items-center gap-1.5"
+                class="text-center sm:min-w-28 text-nowrap flex justify-center items-center gap-1.5 transition-colors"
                 href={link.href}
             >
                 {link.text}
@@ -38,3 +38,41 @@ const links: NavLink[] = [
         ))
     }
 </nav>
+<script>
+    const links = document.querySelectorAll(
+        "nav a",
+    ) as NodeListOf<HTMLAnchorElement>;
+    const sections = document.querySelectorAll("main");
+
+    const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+
+                if (!id) {
+                    links.forEach((link) => {
+                        link.classList.remove("text-indigo-400");
+                    });
+                    return;
+                }
+
+                links.forEach((link) => {
+                    link.classList.remove("text-indigo-400");
+                    if (link.href.includes(id)) {
+                        link.classList.add("text-indigo-400");
+                    }
+                });
+            }
+        });
+    }, options);
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+</script>

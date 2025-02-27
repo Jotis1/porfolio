@@ -1,9 +1,10 @@
 ---
 import Technology from "./technology.astro";
 import Button from "./button.astro";
-import TitlePattern from "./title-pattern.astro";
-import Github from "./icons/github";
+import { Github } from "./react/icons";
 import { ExternalLink } from "lucide-react";
+import { Image } from "astro:assets";
+
 interface Props {
     name: string;
     technologies: (
@@ -17,16 +18,18 @@ interface Props {
     source: string;
     live?: string;
     reverse?: boolean;
+    image: ImageMetadata;
 }
 
-const { name, technologies, source, reverse, live } = Astro.props;
+const { name, technologies, source, reverse, live, image } = Astro.props;
 ---
 
-<main
-    class:list={["h-dvh w-full flex justify-center items-center relative p-10"]}
+<article
+    class:list={[
+        "w-full flex justify-center items-center relative sm:p-10 p-5",
+    ]}
 >
-    <TitlePattern en="Projects" jp="プロジェクト" />
-    <article
+    <section
         class:list={[
             "max-w-3xl w-full z-10",
             "flex sm:flex-row flex-col items-center gap-10",
@@ -76,16 +79,17 @@ const { name, technologies, source, reverse, live } = Astro.props;
                 }
             </footer>
         </aside>
-        <slot name="content" />
-    </article>
-</main>
-<style>
-    main {
-        background: radial-gradient(
-                50% 50% at 50% 50%,
-                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
-                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 50%
-            ),
-            var(--color-zinc-950, #09090b);
-    }
-</style>
+        <figure
+            class:list={[
+                "bg-zinc-800/30 size-full rounded-[18px] overflow-hidden backdrop-blur-md p-1",
+                "hover:scale-103 transition-all duration-500",
+            ]}
+        >
+            <Image
+                src={image}
+                alt={name}
+                class="rounded-2xl size-full object-cover"
+            />
+        </figure>
+    </section>
+</article>

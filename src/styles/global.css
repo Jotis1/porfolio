@@ -16,12 +16,7 @@
 }
 
 @layer base {
-    ::-webkit-scrollbar {
-        display: none;
-    }
-
-    * {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+    html {
+        scrollbar-gutter: auto;
     }
 }
