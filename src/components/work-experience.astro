@@ -26,6 +26,8 @@ const works: Work[] = [
     class:list={[
         "min-h-dvh h-fit sm:p-10 p-5",
         "flex flex-col items-center justify-center gap-10 relative",
+        "sm:bg-radial-[50%_50%_at_50%_50%] from-zinc-800 to-zinc-950 to-50%",
+        "bg-radial-[100%_50%_at_50%_50%]",
     ]}
 >
     <TitlePattern en="Experience" jp="経験" />
@@ -92,13 +94,3 @@ const works: Work[] = [
         </p>
     </article>
 </main>
-<style>
-    main {
-        background: radial-gradient(
-                50% 50% at 50% 50%,
-                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
-                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 50%
-            ),
-            var(--color-zinc-950, #09090b);
-    }
-</style>

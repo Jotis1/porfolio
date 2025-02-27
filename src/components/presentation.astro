@@ -38,6 +38,8 @@ const diffYears = currentYear - workStartingYear;
     class:list={[
         "min-h-dvh sm:p-10 p-5",
         "flex flex-col items-center justify-center gap-10",
+        "sm:bg-radial-[100%_100%_at_50%_0%] from-zinc-700 to-zinc-950 to-40%",
+        "bg-radial-[100%_50%_at_50%_0%]",
     ]}
 >
     <header
@@ -168,13 +170,3 @@ const diffYears = currentYear - workStartingYear;
         </Button>
     </a>
 </main>
-<style>
-    main {
-        background: radial-gradient(
-                100% 100% at 50% 0%,
-                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
-                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 30%
-            ),
-            var(--color-zinc-950, #09090b);
-    }
-</style>

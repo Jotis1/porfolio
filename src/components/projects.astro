@@ -5,7 +5,14 @@ import TitlePattern from "./title-pattern.astro";
 import porfolioImage from "../assets/porfolio.png";
 ---
 
-<main id="projects" class="relative">
+<main
+    id="projects"
+    class:list={[
+        "relative",
+        "sm:bg-radial-[50%_50%_at_50%_50%] from-zinc-800 to-zinc-950 to-50%",
+        "bg-radial-[100%_50%_at_50%_50%]",
+    ]}
+>
     <TitlePattern en="Projects" jp="プロジェクト" />
     <Project
         name="YoruBot"
@@ -94,13 +101,3 @@ import porfolioImage from "../assets/porfolio.png";
         </p>
     </Project>
 </main>
-<style>
-    main {
-        background: radial-gradient(
-                50% 50% at 50% 50%,
-                var(--color-zinc-900, rgba(39, 39, 42, 0.2)) 0%,
-                var(--color-zinc-950, rgba(9, 9, 11, 0.2)) 50%
-            ),
-            var(--color-zinc-950, #09090b);
-    }
-</style>
