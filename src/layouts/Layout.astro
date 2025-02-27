@@ -3,16 +3,38 @@ import "../styles/global.css";
 import "@fontsource/geist-sans/latin.css";
 import "@fontsource-variable/noto-sans-jp";
 import Navbar from "../components/navbar.astro";
+import { SEO } from "astro-seo";
+
+const site = "https://jotis.me";
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
+		<SEO
+			title="Jotis's porfolio"
+			description="Hi there, I'm Jotis, a Spanish software developer. Check out my portfolio to explore some of my projects."
+			openGraph={{
+				basic: {
+					title: "Jotis's porfolio",
+					type: "website",
+					url: site,
+					image: "../assets/porfolio.png",
+				},
+			}}
+			twitter={{
+				card: "summary_large_image",
+				site: site,
+				title: "Jotis's porfolio",
+				image: "../assets/porfolio.png",
+			}}
+		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jotis's porfolio</title>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
 	</head>
 	<body
 		class:list={[
