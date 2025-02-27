@@ -5,6 +5,7 @@ import "@fontsource-variable/noto-sans-jp";
 import Navbar from "../components/navbar.astro";
 import { SEO } from "astro-seo";
 
+const image = "/og-image.png";
 const site = "https://jotis.me";
 ---
 
@@ -19,14 +20,14 @@ const site = "https://jotis.me";
 					title: "Jotis's porfolio",
 					type: "website",
 					url: site,
-					image: "../assets/porfolio.png",
+					image: image,
 				},
 			}}
 			twitter={{
 				card: "summary_large_image",
 				site: site,
 				title: "Jotis's porfolio",
-				image: "../assets/porfolio.png",
+				image: image,
 			}}
 		/>
 		<meta charset="UTF-8" />
