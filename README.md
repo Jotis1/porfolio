@@ -1,5 +1,6 @@
 # Jotis's Porfolio
-> [!TIP] Hello there, check out my porfolio to see my projects and skills. Feel free to clone, fork or download the repository, leave a mention if you use it and a star if you like it.
+> [!NOTE]
+> Hello there, check out my porfolio to see my projects and skills. Feel free to clone, fork or download the repository, leave a mention if you use it and a star if you like it.
 
 ![Porfolio Shot](/public/readme-shot.png)
 
