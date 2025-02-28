@@ -19,11 +19,11 @@ interface Props {
     live?: string;
     reverse?: boolean;
     image: ImageMetadata;
+    backgroundImage: ImageMetadata;
 }
 
-const { name, technologies, source, reverse, live, image } = Astro.props;
-
-import backgroundImage from "../assets/background.png";
+const { name, technologies, source, reverse, live, image, backgroundImage } =
+    Astro.props;
 ---
 
 <article

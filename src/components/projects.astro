@@ -3,6 +3,10 @@ import Project from "./project.astro";
 import TitlePattern from "./title-pattern.astro";
 
 import porfolioImage from "../assets/porfolio.png";
+import linkJotisImage from "../assets/link_jotis.png";
+
+import background1 from "../assets/background_1.png";
+import background2 from "../assets/background_2.png";
 ---
 
 <main
@@ -19,6 +23,7 @@ import porfolioImage from "../assets/porfolio.png";
         technologies={["supabase", "typescript", "bun"]}
         source="https://github.com/yoruverse-dev/discord-bot"
         image={porfolioImage}
+        backgroundImage={background1}
     >
         <p slot="description" class="sm:text-base text-sm">
             Created with
@@ -64,6 +69,7 @@ import porfolioImage from "../assets/porfolio.png";
         reverse
         live="https://gacha.yoruverse.com"
         image={porfolioImage}
+        backgroundImage={background1}
     >
         <p slot="description" class="sm:text-base text-sm">
             An <strong class="strong">anime characters gachapon.</strong> Made for
@@ -87,11 +93,12 @@ import porfolioImage from "../assets/porfolio.png";
         </section>
     </Project>
     <Project
-        name="JotisLink"
+        name="URL Shortener"
         technologies={["tailwind", "astro", "bun"]}
         source="https://github.com/jotis1/url-shortener"
         live="https://link.jotis.me"
-        image={porfolioImage}
+        image={linkJotisImage}
+        backgroundImage={background2}
     >
         <p slot="description" class="sm:text-base text-sm">
             My own <strong class="strong">link shortener</strong>, free forever
