@@ -10,6 +10,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://jotis.me',
+    build: {
+        format: 'file'
+    },
     vite: {
         plugins: [tailwindcss()]
     },
