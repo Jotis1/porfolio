@@ -1,5 +1,5 @@
 ---
-import { Mail } from "lucide-react";
+import { Mail, File } from "lucide-react";
 import { Github, LinkedIn } from "./react/icons";
 import TitlePattern from "./title-pattern.astro";
 const {
@@ -84,6 +84,15 @@ const {
             >
                 <Mail className="size-4" />
                 Email
+            </a>
+            <a
+                class="flex items-center gap-1.5"
+                href="/cv"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <File className="size-4" />
+                Curriculum
             </a>
         </section>
     </footer>
