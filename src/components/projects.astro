@@ -2,8 +2,9 @@
 import Project from "./project.astro";
 import TitlePattern from "./title-pattern.astro";
 
-import porfolioImage from "../assets/porfolio.png";
+// import porfolioImage from "../assets/porfolio.png";
 import linkJotisImage from "../assets/link_jotis.png";
+import yoruBotImage from "../assets/yorubot.png";
 
 import background1 from "../assets/background_1.png";
 import background2 from "../assets/background_2.png";
@@ -20,9 +21,9 @@ import background2 from "../assets/background_2.png";
     <TitlePattern en="Projects" jp="プロジェクト" />
     <Project
         name="YoruBot"
-        technologies={["supabase", "typescript", "bun"]}
+        technologies={["typescript", "bun"]}
         source="https://github.com/yoruverse-dev/discord-bot"
-        image={porfolioImage}
+        image={yoruBotImage}
         backgroundImage={background1}
     >
         <p slot="description" class="sm:text-base text-sm">
@@ -33,24 +34,9 @@ import background2 from "../assets/background_2.png";
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Discord.js
-            </a>,
-            <a
-                class="link"
-                href="https://platform.openai.com"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                OpenAI
-            </a> and
-            <a
-                class="link"
-                href="https://www.langchain.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Langchain.
-            </a> YoruBot was made for entertaining. Open-source and MIT license.
+                Discord.js library
+            </a>. YoruBot was made for entertaining. Ready to use, open-source
+            and MIT license.
         </p>
         <section
             slot="content"
@@ -62,7 +48,7 @@ import background2 from "../assets/background_2.png";
             </figure>
         </section>
     </Project>
-    <Project
+    <!-- <Project
         name="YoruGacha (WIP)"
         technologies={["tailwind", "next", "bun"]}
         source="https://github.com/yoruverse-dev/gacha"
@@ -90,7 +76,7 @@ import background2 from "../assets/background_2.png";
             >
             </figure>
         </section>
-    </Project>
+    </Project> -->
     <Project
         name="Byte & Slice"
         technologies={["tailwind", "next", "bun"]}
