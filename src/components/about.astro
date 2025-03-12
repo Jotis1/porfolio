@@ -13,51 +13,56 @@ const {
     id="about"
     class:list={[
         "min-h-screen sm:p-10 p-5",
-        "flex items-center justify-center relative",
+        "flex flex-col items-center justify-center relative",
         "sm:bg-radial-[50%_50%_at_50%_50%] from-indigo-950 to-zinc-950 to-50%",
         "bg-radial-[100%_50%_at_50%_50%]",
     ]}
 >
-    <TitlePattern en="About me" jp="私について" />
-    <section
-        class="flex sm:flex-row flex-col items-center justify-center gap-10 max-w-3xl z-10"
-    >
-        <article
-            class="max-w-full w-full flex flex-col gap-4 sm:text-base text-sm"
+    <section class="flex items-center justify-center relative grow">
+        <TitlePattern en="About me" jp="私について" />
+        <section
+            class="flex sm:flex-row flex-col items-center justify-center gap-10 max-w-3xl z-10"
         >
-            <p>
-                My name is <strong class="strong">Juan Manuel</strong> but I like
-                to be called Jotis. I started programming when I was very young,
-                making discord bots for "osu!" servers.
-            </p>
-            <p>
-                I always liked creating things and I used <strong class="strong"
-                    >code as a tool for it.</strong
-                >
-                I am <strong class="strong">not a conformist person,</strong> if
-                something can be done better I will look for a way to make it possible.
-            </p>
-            <p>
-                I like to help my colleagues and <strong class="strong"
-                    >share my knowledge,</strong
-                > I believe in teamwork and camaraderie.
-            </p>
-        </article>
-        <figure
-            class="bg-zinc-800/30 rounded-[18px] backdrop-blur-md p-1 size-64 shrink-0"
-        >
-            <img
-                src={`https://github.com/${github}.png`}
-                alt="Jotis's Github Image"
-                class="rounded-2xl"
-            />
-        </figure>
+            <article
+                class="max-w-full w-full flex flex-col gap-4 sm:text-base text-sm"
+            >
+                <p>
+                    My name is <strong class="strong">Juan Manuel</strong> but I
+                    like to be called Jotis. I started programming when I was very
+                    young, making discord bots for "osu!" servers.
+                </p>
+                <p>
+                    I always liked creating things and I used <strong
+                        class="strong">code as a tool for it.</strong
+                    >
+                    I am <strong class="strong">not a conformist person,</strong
+                    > if something can be done better I will look for a way to make
+                    it possible.
+                </p>
+                <p>
+                    I like to help my colleagues and <strong class="strong"
+                        >share my knowledge,</strong
+                    > I believe in teamwork and camaraderie.
+                </p>
+            </article>
+            <figure
+                class="bg-zinc-800/30 rounded-[18px] backdrop-blur-md p-1 size-64 shrink-0"
+            >
+                <img
+                    src={`https://github.com/${github}.png`}
+                    alt="Jotis's Github Image"
+                    class="rounded-2xl"
+                />
+            </figure>
+        </section>
     </section>
     <footer
-        class="absolute bottom-0 flex flex-col sm:gap-12 gap-5 px-5 py-10 items-center justify-center text-sm"
+        class="flex flex-col sm:gap-12 gap-5 px-5 py-10 items-center justify-center text-sm z-10"
     >
         <p>Crafted by me with Astro</p>
-        <section class="flex gap-12 items-centerfont-medium text-zinc-400">
+        <section
+            class="flex gap-x-12 gap-y-2.5 items-center justify-center font-medium text-zinc-400 flex-wrap"
+        >
             <a
                 class="flex items-center gap-1.5"
                 href={`https://linkedin.com/in/${linkedin}`}
