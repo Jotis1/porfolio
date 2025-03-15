@@ -12,6 +12,7 @@
     "@astrojs/react": "4.2.1",
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource-variable/geist": "^5.0.1",
+    "@fontsource-variable/geist-mono": "^5.2.5",
     "@fontsource-variable/noto-sans-jp": "^5.1.1",
     "@fontsource/geist-sans": "^5.1.0",
     "@tailwindcss/vite": "^4.0.8",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@tailwindcss/typography": "^0.5.16",
     "eslint": "^9.21.0",
     "globals": "^16.0.0",
     "typescript-eslint": "^8.24.1"

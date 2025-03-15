@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Prose from "../../components/prose.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+
+    return posts.map((post) => ({
+        params: { id: post.id },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+    <main class:list={["max-w-3xl mx-auto px-5 py-10"]}>
+        <Prose>
+            <header class="mt-12">
+                <h1 class="text-4xl font-bold">
+                    {post.data.title}
+                </h1>
+                <p class="text-zinc-300">
+                    {post.data.description}
+                </p>
+                <div class="flex items-center space-x-5">
+                    <img
+                        src={post.data.avatar}
+                        alt={post.data.author}
+                        class="w-8 h-8 rounded-full ring-2 ring-zinc-200"
+                    />
+                    <span class="text-zinc-300">
+                        {post.data.author} • {
+                            post.data.date.toLocaleString("en-US", {
+                                month: "long",
+                                day: "numeric",
+                                year: "numeric",
+                            })
+                        }
+                    </span>
+                </div>
+                <hr />
+            </header>
+            <Content />
+        </Prose>
+    </main>
+    <span
+        class="fixed z-[-1] size-full top-0 left-0 bg-radial-[75%_75%_at_100%_0%] from-indigo-950 to-zinc-950"
+    ></span>
+</Layout>
