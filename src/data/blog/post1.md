@@ -2,9 +2,11 @@
 title: "Modern Frontend: Integrating Zod, TailwindCSS & Framer Motion"
 description: "Discover how to streamline your frontend workflow by integrating essential libraries like Zod for validation, clsx and tailwindmerge for dynamic class management, TailwindCSS for utility-first design, and Framer Motion for smooth React animations."
 date: 2025-03-15
+author: 
+  name: "Jotis"
+  avatar: "https://github.com/jotis1.png"
+  link: "https://github.com/jotis1"
 slug: integrating-zod-tailwindcss-framer-motion
-author: "Jotis"
-avatar: "https://github.com/jotis1.png"
 ---
 
 In the modern JavaScript/TypeScript frontend landscape, having the right tools can transform your workflow. In this post, we'll explore four key libraries that are reshaping how we build secure, visually appealing, and dynamic user interfaces:

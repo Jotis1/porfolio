@@ -6,8 +6,11 @@ const collectionSchema = z.object({
     description: z.string(),
     date: z.date(),
     slug: z.string(),
-    author: z.string(),
-    avatar: z.string().url(),
+    author: z.object({
+        name: z.string(),
+        avatar: z.string().url(),
+        link: z.string().url(),
+    }),
 });
 
 const blog = defineCollection({
