@@ -13,27 +13,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
       - uses: actions/checkout@v4
 
-      # Install Bun
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest  # O puedes poner una versión específica, como '1.0.x'
+          bun-version: latest
 
-      # Install dependencies using Bun
       - name: Install Dependencies with Bun
         run: |
-          bun install --frozen-lockfile  # Usamos el lockfile de Bun si ya existe, para evitar cambios
+          bun install --frozen-lockfile
+        continue-on-error: false
 
-      # Build the project using Bun (en vez de Grunt)
       - name: Build Project with Bun
         run: |
-          bun run build  # Asegúrate de tener un script de 'build' en tu package.json
+          bun run build || exit 1
 
-      # Deploy step (añade aquí lo que uses para desplegar, por ejemplo, un script de deploy)
       - name: Deploy to Plesk
         run: |
           echo "Deploying to Plesk..."
-          # Aquí iría tu comando de despliegue, dependiendo de cómo lo configures en Plesk
+        continue-on-error: false
