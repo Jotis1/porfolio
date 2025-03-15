@@ -25,7 +25,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 
 * **Centralized Login:**
   Users log in at [yoruverse.com](http://yoruverse.com) using OAuth providers such as Google, Discord, and others.
-* **Shared Session Management:** Secure cookies configured for the ` .yoruverse.com` domain will allow session persistence across subdomains.
+* **Shared Session Management:** Secure cookies configured for the `.yoruverse.com` domain will allow session persistence across subdomains.
 * **2FA Delegation:** Since authentication is handled by external providers, two-factor authentication is managed externally, reducing system complexity.
 * **Per-Application Profile Management:**
   When accessing a new application, the system checks if a linked profile exists. If not, it creates one and associates it with the central user account.
