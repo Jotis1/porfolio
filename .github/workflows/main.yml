@@ -1,0 +1,32 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # O la rama que uses para el deploy
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '23.9.0'  # Usar la versión 23.9.0 de Node.js
+
+      - name: Install dependencies using npm ci
+        run: npm ci  # Usa npm ci para asegurar que las dependencias sean instaladas de forma exacta
+
+      - name: Build Astro project
+        run: npm run build
+
+      - name: Deploy to Plesk
+        if: success()  # Solo ejecutará esta tarea si el build es exitoso
+        run: |
+          # Aquí pones los comandos que usas para el despliegue en Plesk
+          # Si tienes un script de deploy o si usas algún otro mecanismo, puedes llamarlo aquí
+          echo "Deploying to Plesk..."
