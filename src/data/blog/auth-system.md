@@ -11,17 +11,17 @@ slug: centralized-authentication-system-yoruverse
 
 ## Introduction
 
-**Objective**
+### Objective
 
 Design and implement a centralized authentication system in yoruverse.com that allows users to log in using external providers (Google, Discord, etc.) and share the session across different subdomains (e.g., [gacha.yoruverse.com](http://gacha.yoruverse.com)). This will prevent users from having to log in for each application and will delegate the 2FA management to the authentication providers.
 
-**Vision**
+### Vision
 
 Create a seamless, secure, and scalable user experience that centralizes authentication and profile management, making it easy to integrate new applications into the Yoruverse ecosystem.
 
 ## Project Scope and Requirements
 
-###### Core Features
+### Core Features
 
 * **Centralized Login:**
   Users log in at [yoruverse.com](http://yoruverse.com) using OAuth providers such as Google, Discord, and others.
@@ -30,7 +30,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 * **Per-Application Profile Management:**
   When accessing a new application, the system checks if a linked profile exists. If not, it creates one and associates it with the central user account.
 
-###### Technologies Used:
+### Technologies Used:
 
 * **Frontend:**
   Applications primarily build with Next.js, leveraging SSR and modern React features for a fast and secure experience.
@@ -41,13 +41,13 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 
 ## System Architecture
 
-**General Design**
+### General Design
 
 * **Centralized Authentication:** [yoruverse.com](http://yoruverse.com) will handle login flows and issue session tokens (ideally JWTs) set in cookies with the `Domain=.yoruverse.com` attribute for accessibility across all subdomains.
 * **Inter-Application Communication:**
   Each subdomain (e.g., [gacha.yoruverse.com](http://gacha.yoruverse.com)) will validate the existing session. If no profile is found, it will call the backend to create and link the profile.
 
-**Integration with External Providers**
+### Integration with External Providers
 
 * **OAuth2 Flow:**
   1. The user selects a provider (Google, Discord, etc.) on the authentication page.
@@ -59,7 +59,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 
 ## Authentication and Profile Management Flow
 
-###### Login Flow
+### Login Flow
 
 1. **Access [yoruverse.com](http://yoruverse.com):**
    The user visits the authentication page and selects a login method.
@@ -74,7 +74,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 5. **Accessing Subdomains:**
    When accessing any subdomain, the session is checked. If no specific profile exists, an API call creates and links it to the central account.
 
-###### Per-Application Profile Management
+### Per-Application Profile Management
 
 * **Dynamic Verification:**
   Each application, upon receiving a valid session, must check if a linked profile exists for that specific service.
@@ -85,7 +85,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 
 ## Security Measures
 
-###### Secure Communication
+### Secure Communication
 
 * **Mandatory HTTPS:**
   All communication must be encrypted via HTTPS.
@@ -93,7 +93,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
   * Configure session cookies with `Secure` and `HttpOnly` attributes.
   * Set `SameSite` appropriately (`Lax` or `Strict`).
 
-###### Token Validation and Control
+### Token Validation and Control
 
 * **JWT Best Practices:**
   * Sign and verify tokens with secure keys.
@@ -101,7 +101,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 * **Token Revocation System:**
   Implement a system to revoke compromised or invalid tokens.
 
-###### Attack Prevention
+### Attack Prevention
 
 * **CSRF and XSS Protection:**
   * Use CSRF tokens for sensitive endpoints.
@@ -113,7 +113,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
   * Regularly review and audit code and security settings.
   * Conduct penetration tests and vulnerability assessments.
 
-###### Secure Data Management
+### Secure Data Management
 
 * **Supabase and RLS:**
   * Configure Row-Level Security (RLS) policies to ensure users only access their own data.
@@ -123,7 +123,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
 
 ## Implementation and Deployment Considerations
 
-###### Development and Testing
+### Development and Testing
 
 * **Continuous Integration and Deployment (CI/CD):**
   Establish pipelines for automated testing, deployment, and security reviews.
@@ -131,7 +131,7 @@ Create a seamless, secure, and scalable user experience that centralizes authent
   * Keep development, staging, and production environments isolated.
   * Conduct security and load testing in staging before deploying to production.
 
-###### Scalability and Maintenance
+### Scalability and Maintenance
 
 * **Monitoring and Logging:**
   * Implement monitoring tools to detect real-time anomalies.
