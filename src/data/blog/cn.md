@@ -58,6 +58,7 @@ const { variant } = props;
 
 <div className={`${variant === 'primary' ? 'bg-indigo-400 text-white' : 'bg-gray-200 text-gray-800'}`}>
   Hello, World!
+</div>
 ```
 
 This is not bad, but it can get messy with more conditions. With `clsx`, you can simplify it like this:
@@ -103,7 +104,7 @@ const { className } = props;
 ```
 
 ## I know why, but how?
-Have you realized what utility funcion I used in the examples? It's `cn`! It's a simple utility function that combines `clsx` and `tailwindmerge` to make your life easier. Here's how it looks like:
+Have you noticed the utility function used in the examples? It's `cn`! This simple function combines `clsx` and `tailwindmerge` to streamline your class management. Here's how it looks:
 
 ```tsx
 import { clsx, type ClassValue } from 'clsx';
