@@ -87,7 +87,7 @@ const { className } = props;
 </div>
 ```
 
-❌ This is, indeed, pretty bad. Tailwind will probably generate a lot of classes that you don't need. With `tailwindmerge`, you can simplify it like this:
+This is, indeed, pretty bad. Tailwind will probably generate a lot of classes that you don't need. With `tailwindmerge`, you can simplify it like this:
 
 ```tsx
 // ✅ GOOD WAY
