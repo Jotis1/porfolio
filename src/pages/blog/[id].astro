@@ -21,8 +21,8 @@ const { Content } = await render(post);
     <main class:list={["max-w-3xl mx-auto px-5 py-10"]}>
         <Prose>
             <header class="mt-12">
-                <p>
-                    <CalendarIcon className="size-5 inline-block mr-1.5 mb-1" />
+                <p class="text-xs">
+                    <CalendarIcon className="size-4 inline-block mr-1.5 mb-1" />
                     {
                         post.data.date.toLocaleDateString("en-US", {
                             weekday: "long",
