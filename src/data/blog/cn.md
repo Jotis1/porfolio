@@ -7,7 +7,7 @@ author:
   avatar: "https://github.com/jotis1.png"
   link: "https://github.com/jotis1"
 slug: "better-class-management-clsx-tailwind-merge"
-og_image: "/blog/cn.png"
+og_image: "/blog/better-class-management-clsx-tailwind-merge.png"
 ---
 ## Introduction
 
