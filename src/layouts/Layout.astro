@@ -8,13 +8,14 @@ import { SEO } from "astro-seo";
 interface Props {
 	title?: string;
 	description?: string;
+	image?: string;
 }
 const {
 	title = "Jotis's porfolio",
 	description = "Hi there, I'm Jotis, a Spanish software developer. Check out my portfolio to explore some of my projects.",
+	image = "/og-image.png",
 } = Astro.props;
 
-const image = "/og-image.png";
 const site = "https://jotis.me";
 ---
 

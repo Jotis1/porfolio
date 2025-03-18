@@ -11,6 +11,7 @@ const collectionSchema = z.object({
         avatar: z.string().url(),
         link: z.string().url(),
     }),
+    og_image: z.string().optional()
 });
 
 const blog = defineCollection({

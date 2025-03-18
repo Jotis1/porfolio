@@ -7,6 +7,7 @@ author:
   avatar: "https://github.com/jotis1.png"
   link: "https://github.com/jotis1"
 slug: "better-class-management-clsx-tailwind-merge"
+og_image: "/blog/cn.png"
 ---
 ## Introduction
 
@@ -87,7 +88,7 @@ const { className } = props;
 </div>
 ```
 
-This is, indeed, pretty bad. Tailwind will probably generate a lot of classes that you don't need. With `tailwindmerge`, you can simplify it like this:
+This is, indeed, pretty bad. Tailwind will probably generate a lot of classes that you don't need. With `tailwind-merge`, you can simplify it like this:
 
 ```tsx
 // ✅ GOOD WAY
