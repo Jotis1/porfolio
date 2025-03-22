@@ -14,9 +14,15 @@ interface Props {
         | "astro"
         | "tailwind"
         | "next"
+        | "angular"
+        | "ionic"
     )[];
-    source: string;
-    live?: string;
+    source?: string;
+    live?: {
+        android?: string;
+        ios?: string;
+        web?: string;
+    };
     reverse?: boolean;
     image: ImageMetadata;
     backgroundImage: ImageMetadata;
@@ -50,7 +56,7 @@ const { name, technologies, source, reverse, live, image, backgroundImage } =
                 </section>
             </header>
             <slot name="description" />
-            <footer class="flex w-full justify-between">
+            <footer class="flex w-full justify-start gap-2.5">
                 {
                     source && (
                         <a
@@ -66,17 +72,25 @@ const { name, technologies, source, reverse, live, image, backgroundImage } =
                     )
                 }
                 {
-                    live && (
-                        <a
-                            href={live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Button variant="secondary">
-                                Live preview
-                                <ExternalLink className="size-4 text-amber-200" />
-                            </Button>
-                        </a>
+                    live && Object.keys(live).length > 0 && (
+                        <div class="flex gap-2.5">
+                            {Object.entries(live).map(([key, value]) => (
+                                <a
+                                    href={value}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Button variant="secondary">
+                                        {key === "android"
+                                            ? "Android"
+                                            : key === "ios"
+                                              ? "iOS"
+                                              : "Live Preview"}
+                                        <ExternalLink className="size-4 text-amber-200" />
+                                    </Button>
+                                </a>
+                            ))}
+                        </div>
                     )
                 }
             </footer>
@@ -101,7 +115,7 @@ const { name, technologies, source, reverse, live, image, backgroundImage } =
                     alt="Background"
                     class:list={[
                         "rounded-2xl object-cover",
-                        " scale-110 group-hover:scale-100 transition-transform duration-300",
+                        "scale-110 group-hover:scale-105 transition-transform duration-300",
                     ]}
                 />
             </span>

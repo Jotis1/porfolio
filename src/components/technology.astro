@@ -6,10 +6,20 @@ import {
     Astro as AstroIcon,
     TailwindCSS,
     Nextjs,
+    Angular,
+    Ionic,
 } from "./react/icons";
 
 interface Props {
-    variant: "supabase" | "typescript" | "bun" | "astro" | "tailwind" | "next";
+    variant:
+        | "supabase"
+        | "typescript"
+        | "bun"
+        | "astro"
+        | "tailwind"
+        | "next"
+        | "angular"
+        | "ionic";
 }
 
 const { variant } = Astro.props;
@@ -21,6 +31,8 @@ const color = {
     astro: "text-zinc-50",
     tailwind: "text-sky-300",
     next: "text-zinc-50",
+    angular: "text-violet-300",
+    ionic: "text-blue-300",
 };
 
 const icon = {
@@ -30,6 +42,8 @@ const icon = {
     astro: AstroIcon,
     tailwind: TailwindCSS,
     next: Nextjs,
+    angular: Angular,
+    ionic: Ionic,
 };
 
 const text = {
@@ -39,6 +53,8 @@ const text = {
     astro: "Astro",
     tailwind: "TailwindCSS",
     next: "Next.js",
+    angular: "Angular",
+    ionic: "Ionic",
 };
 ---
 
