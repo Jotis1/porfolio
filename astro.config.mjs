@@ -11,7 +11,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: 'https://jotis.me',
     build: {
-        format: 'file'
+        format: 'directory'
     },
     vite: {
         plugins: [tailwindcss()]
