@@ -1,14 +1,15 @@
 ---
-title: "Better class management in TailwindCSS with clsx and tailwind-merge"
-description: "Learn how to manage dynamic CSS classes efficiently using clsx and tailwind-merge, optimizing your TailwindCSS styles."
+slug: better-class-management-clsx-tailwind-merge
+title: Better class management in TailwindCSS with clsx and tailwind-merge
+description: Learn how to manage dynamic CSS classes efficiently using clsx and tailwind-merge, optimizing your TailwindCSS styles.
 date: 2025-03-15
+og_image: better-class-management-clsx-tailwind-merge.png
 author: 
-  name: "Jotis"
-  avatar: "https://github.com/jotis1.png"
-  link: "https://github.com/jotis1"
-slug: "better-class-management-clsx-tailwind-merge"
-og_image: "/blog/better-class-management-clsx-tailwind-merge.png"
+  name: Jotis
+  avatar: https://github.com/jotis1.png
+  link: https://github.com/jotis1
 ---
+
 ## Introduction
 
 Sometimes, managing dynamic CSS classes in your components can be a bit tricky (especially with utility-first frameworks like TailwindCSS), **but not for me!** (and soon, not for you either).

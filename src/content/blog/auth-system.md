@@ -1,12 +1,12 @@
 ---
-title: "Centralized Authentication System for Yoruverse"
-description: "Design and implement a centralized authentication system in yoruverse.com that allows users to log in using external providers (Google, Discord, etc.) and share the session across different subdomains."
+slug: centralized-authentication-system-yoruverse
+title: Centralized Authentication System for Yoruverse
+description: Design and implement a centralized authentication system in yoruverse.com
 date: 2025-03-15
 author: 
-  name: "Jotis"
-  avatar: "https://github.com/jotis1.png"
-  link: "https://github.com/jotis1"
-slug: centralized-authentication-system-yoruverse
+  name: Jotis
+  avatar: https://github.com/jotis1.png
+  link: https://github.com/jotis1
 ---
 
 ## Introduction

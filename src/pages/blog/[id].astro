@@ -44,7 +44,7 @@ const { Content } = await render(post);
                 </p>
                 <div
                     class:list={[
-                        "flex items-center gap-2.5 h-fit px-5 py-0.5 w-fit rounded-2xl",
+                        "flex items-center gap-2.5 h-fit px-1 py-0.5 w-fit rounded-2xl",
                         "bg-zinc-900 border border-zinc-800",
                     ]}
                 >
@@ -53,7 +53,7 @@ const { Content } = await render(post);
                         alt={post.data.author.name}
                         class="size-6 rounded-full mt-0 mb-0"
                     />
-                    <a href={post.data.author.link}>
+                    <a href={post.data.author.link} class="no-underline">
                         {post.data.author.name}
                     </a>
                 </div>
